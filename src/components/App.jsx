@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
+import SearchContainer from '../containers/SearchContainer';
 import Header from './Header';
-import Search from './Search';
 
 class App extends Component {
   render() {
@@ -9,7 +9,7 @@ class App extends Component {
       <div>
         <Header />
         <div className="container">
-          <Search />          
+          <SearchContainer />
         </div>
       </div>
     );

@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 class Search extends Component {
+  componentDidMount() {
+    console.log(this.props.weather);
+  }
+
   render() {
     return (
       <div className="row justify-content-center search-container">
