@@ -1,0 +1,25 @@
+.search-container {
+  margin-top: 24px;
+}
+
+.search-group input {
+  min-width: 400px;
+
+  @include media-breakpoint-down(sm) {
+    min-width: 360px;
+  }
+  @include media-breakpoint-down(xs) {
+    min-width: 200px;
+  }
+}
+
+.btn-find {
+
+  @include media-breakpoint-up(sm) {
+    margin-left: 6px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    margin-top: 6px;
+  }
+}
