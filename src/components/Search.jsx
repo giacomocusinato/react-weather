@@ -19,6 +19,7 @@ class Search extends Component {
             </span>
           </div>
           <button className="btn btn-primary btn-find" type="button">
+            <i className="fa fa-location-arrow"></i>
             Find Me!
           </button>
         </div>

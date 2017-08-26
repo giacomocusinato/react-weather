@@ -1,0 +1,12 @@
+@import 'bootstrap/scss/bootstrap';
+
+@import 'font-awesome/scss/font-awesome.scss';
+$fa-font-path: '../fonts';
+
+@import './components/header';
+@import './components/search';
+
+body {
+  margin: 0;
+  padding: 0;
+}
