@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Search extends Component {
   componentDidMount() {
-    console.log(this.props.weather);
+    this.props.fetchWeather();
   }
 
   render() {

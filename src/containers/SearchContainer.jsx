@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import Search from '../components/Search'
+import { fetchWeather } from '../actions/index';
 
 
 class SearchContainer extends Component {
@@ -14,4 +16,10 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(SearchContainer);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    fetchWeather,
+  }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchContainer);
