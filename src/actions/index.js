@@ -8,43 +8,11 @@ export function fetchWeather() {
 
     return fetch(`${ROOT_URL}&q=London,GB`)
       .then(response => response.json())
-      .then(json => {
-        /*
-        Format json to the designen application state, eg:
-
-        {
-          city: 'London, UK',
-          current: {
-            // Api weather object for current hour (first item)
-          }
-          days: [
-            date: date
-            weather: [ // Api weather object list for given date ]
-          ]
-        }
-        */
-
-        let initialValue = {
-          city: json.city,
-          current: json.list[0],
-          days: []
-        };
-
-        let weatherObject = json.list.reduce((obj, item) => {
-          let date = new Date(item.dt_txt);
-          if (!obj.days.length) {
-            obj.days.push({ date, list: [item] });
-          } else {
-            obj.days[obj.days.length - 1].date.getDay() === date.getDay()
-              ? obj.days[obj.days.length - 1].list.push(item)
-              : obj.days.push({ date, list: [item] });
-          }
-          return obj;
-        }, initialValue);
-
-        dispatch(receiveWeatherSuccess(weatherObject));
+      .then(json => formatWeatherJson(json))
+      .then(weatherObj => {
+        dispatch(receiveWeatherSuccess(weatherObj));
       })
-      .catch((err) => {
+      .catch(err => {
         console.log(err);
         dispatch(receiveWeatherError());
       });
@@ -61,4 +29,28 @@ export function receiveWeatherSuccess(weather) {
 
 export function receiveWeatherError() {
   return { type: types.RECEIVE_WEATHER_ERROR };
+}
+
+/*
+Format retrieved weather json in order to match the designed
+application state (city, current weather and next five days weather).
+*/
+function formatWeatherJson(json) {
+  let initialValue = {
+    city: json.city,
+    current: json.list[0],
+    days: []
+  };
+
+  return json.list.reduce((obj, item) => {
+    let date = new Date(item.dt_txt);
+    if (!obj.days.length) {
+      obj.days.push({ date, list: [item] });
+    } else {
+      obj.days[obj.days.length - 1].date.getDay() === date.getDay()
+        ? obj.days[obj.days.length - 1].list.push(item)
+        : obj.days.push({ date, list: [item] });
+    }
+    return obj;
+  }, initialValue);
 }
