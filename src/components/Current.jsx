@@ -6,11 +6,16 @@ import Skycon from './Skycon';
 class Current extends Component {
   render() {
     if (this.props.weather.hasErrored) {
-      return <p>Error</p>;
+      return <p className="error">Sorry, could not get the weather.</p>;
     }
 
     if (this.props.weather.isLoading || !this.props.weather.data) {
-      return <p>Loading...</p>
+      return (
+        <div className="main-loader">
+          <i className="fa fa-circle-o-notch fa-spin fa-fw"></i>
+          <span className="sr-only">Loading...</span>
+        </div>
+      );
     }
 
 
