@@ -46,11 +46,11 @@ function formatWeatherJson(json) {
   return json.list.reduce((obj, item) => {
     let date = new Date(item.dt_txt);
     if (!obj.days.length) {
-      obj.days.push({ date, list: [item] });
+      obj.days.push({ date, forecasts: [item] });
     } else {
       obj.days[obj.days.length - 1].date.getDay() === date.getDay()
-        ? obj.days[obj.days.length - 1].list.push(item)
-        : obj.days.push({ date, list: [item] });
+        ? obj.days[obj.days.length - 1].forecasts.push(item)
+        : obj.days.push({ date, forecasts: [item] });
     }
     return obj;
   }, initialValue);

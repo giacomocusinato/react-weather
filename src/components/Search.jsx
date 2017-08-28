@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { getCoordinates } from '../utils/geolocationUtils';
+import { getCoordinates } from '../utils/GeolocationUtils';
 
 
 class Search extends Component {

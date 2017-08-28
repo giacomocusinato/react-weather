@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Header from './Header';
 import SearchContainer from '../containers/SearchContainer';
-import CurrentContainer from '../containers/CurrentContainer';
+import ForecastContainer from '../containers/ForecastContainer';
 
 class App extends Component {
   render() {
@@ -11,7 +11,7 @@ class App extends Component {
         <Header />
         <div className="container">
           <SearchContainer />
-          <CurrentContainer />
+          <ForecastContainer />
         </div>
       </div>
     );

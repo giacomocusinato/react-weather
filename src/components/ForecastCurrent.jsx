@@ -3,22 +3,8 @@ import React, { Component } from 'react';
 import Skycon from './Skycon';
 
 
-class Current extends Component {
+class ForecastCurrent extends Component {
   render() {
-    if (this.props.weather.hasErrored) {
-      return <p className="error">Sorry, could not get the weather.</p>;
-    }
-
-    if (this.props.weather.isLoading || !this.props.weather.data) {
-      return (
-        <div className="main-loader">
-          <i className="fa fa-circle-o-notch fa-spin fa-fw"></i>
-          <span className="sr-only">Loading...</span>
-        </div>
-      );
-    }
-
-
     const { location, current } = this.props.weather.data;
 
     return (
@@ -39,4 +25,4 @@ class Current extends Component {
 
 }
 
-export default Current;
+export default ForecastCurrent;
