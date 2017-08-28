@@ -2,11 +2,11 @@ import 'whatwg-fetch';
 import * as types from '../constants/ActionTypes';
 import { ROOT_URL } from '../constants/ApiUrl';
 
-export function fetchWeather() {
+export function fetchWeather(location) {
   return dispatch => {
     dispatch(requestWeather());
 
-    return fetch(`${ROOT_URL}&q=London,GB`)
+    return fetch(`${ROOT_URL}&q=${location}`)
       .then(response => response.json())
       .then(json => formatWeatherJson(json))
       .then(weatherObj => {

@@ -1,8 +1,23 @@
 import React, { Component } from 'react';
 
 class Search extends Component {
-  componentDidMount() {
-    this.props.fetchWeather();
+
+  constructor() {
+    super();
+
+    this.state = {location: ''};
+  }
+
+  componentDidMount = () => this.props.fetchWeather('London,UK');
+
+  handleLocationChange = (e) =>
+    this.setState({location: e.target.value});
+
+  handleSearchClick = () => {
+    if (this.state.location === '')
+      return;
+
+    this.props.fetchWeather(this.state.location);
   }
 
   render() {
@@ -13,11 +28,15 @@ class Search extends Component {
             <input
               type="text"
               className="form-control"
-              placeholder="Enter a city"
+              placeholder="Enter a location, e.g. London, UK"
               aria-label="Enter a city"
+              onChange={this.handleLocationChange}
             />
             <span className="input-group-btn">
-              <button className="btn btn-secondary" type="button">
+              <button
+                onClick={this.handleSearchClick}
+                className="btn btn-secondary"
+                type="button">
                 Search
               </button>
             </span>
