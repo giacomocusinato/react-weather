@@ -10,10 +10,8 @@ class SearchContainer extends Component {
   render = () => <Search {...this.props} />;
 }
 
-function mapStateToProps(state) {
-  return {
-    weather: state.weather
-  };
+function mapStateToProps({ weather }) {
+  return { weather };
 }
 
 function mapDispatchToProps(dispatch) {
