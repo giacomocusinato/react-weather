@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
-import SearchContainer from '../containers/SearchContainer';
 import Header from './Header';
+import SearchContainer from '../containers/SearchContainer';
+import CurrentContainer from '../containers/CurrentContainer';
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
         <Header />
         <div className="container">
           <SearchContainer />
+          <CurrentContainer />
         </div>
       </div>
     );
