@@ -10,7 +10,6 @@ export function getCoordinates() {
       });
     })
 
-
   } else {
     console.log('Geolocation not supported');
   }
