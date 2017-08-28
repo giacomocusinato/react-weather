@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 
+import { getCoordinates } from '../utils/geolocationUtils';
+
+
 class Search extends Component {
 
   constructor() {
     super();
 
-    this.state = {location: ''};
+    this.state = {
+      location: '',
+      positionLoading: false,
+      weatherLoading: false
+    };
   }
 
   componentDidMount = () => this.props.fetchWeather('London,UK');
@@ -18,6 +25,15 @@ class Search extends Component {
       return;
 
     this.props.fetchWeather(this.state.location);
+  }
+
+  handleFindMeClick = () => {
+    this.setState({ positionLoading: true });
+
+    getCoordinates()
+      .then(coords => this.props.fetchWeather(coords)
+      .then(() => this.setState({ positionLoading: false }))
+    );
   }
 
   render() {
@@ -41,8 +57,13 @@ class Search extends Component {
               </button>
             </span>
           </div>
-          <button className="btn btn-primary btn-find" type="button">
-            <i className="fa fa-location-arrow"></i>
+          <button
+            onClick={this.handleFindMeClick}
+            className="btn btn-primary btn-find"
+            type="button">
+            {this.state.positionLoading ?
+              <i className="fa fa-circle-o-notch fa-spin fa-fw"></i> :
+              <i className="fa fa-location-arrow"></i>}
             Find Me!
           </button>
         </form>

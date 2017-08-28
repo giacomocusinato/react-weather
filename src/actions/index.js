@@ -1,12 +1,13 @@
 import 'whatwg-fetch';
 import * as types from '../constants/ActionTypes';
-import { ROOT_URL } from '../constants/ApiUrl';
+import { getCompleteUrl } from '../utils/ApiUtils';
+
 
 export function fetchWeather(location) {
   return dispatch => {
     dispatch(requestWeather());
 
-    return fetch(`${ROOT_URL}&q=${location}`)
+    return fetch(getCompleteUrl(location))
       .then(response => response.json())
       .then(json => formatWeatherJson(json))
       .then(weatherObj => {
