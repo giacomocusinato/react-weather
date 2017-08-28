@@ -1,0 +1,28 @@
+.current-container {
+  margin-top: 48px;
+
+  .weather {
+    font-size: 42px;
+    font-weight: 200;
+    margin-left: -12px;
+    display: inline-block;
+  }
+
+  .description {
+    margin-top: 12px;
+    font-size: 24px;
+    font-weight: 200;
+    text-align: center;
+
+    span {
+      text-transform: capitalize;
+    }
+  }
+}
+
+.skycon {
+  margin-left: -32px;
+  display: inline-block;
+  width: 160px !important;
+  height: 80px !important;
+}
