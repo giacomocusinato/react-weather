@@ -23,7 +23,7 @@ class Search extends Component {
   render() {
     return (
       <div className="row justify-content-center search-container">
-        <div className="form-inline">
+        <form className="form-inline" onSubmit={(e) => e.preventDefault()}>
           <div className="input-group search-group">
             <input
               type="text"
@@ -36,7 +36,7 @@ class Search extends Component {
               <button
                 onClick={this.handleSearchClick}
                 className="btn btn-secondary"
-                type="button">
+                type="submit">
                 Search
               </button>
             </span>
@@ -45,7 +45,7 @@ class Search extends Component {
             <i className="fa fa-location-arrow"></i>
             Find Me!
           </button>
-        </div>
+        </form>
       </div>
     );
   }
