@@ -37,7 +37,7 @@ application state (city, current weather and next five days weather).
 */
 function formatWeatherJson(json) {
   let initialValue = {
-    city: json.city,
+    location: json.city,
     current: json.list[0],
     days: []
   };
