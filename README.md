@@ -5,12 +5,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ![React and Redux](https://i.imgur.com/VgVcakV.png)
 
+
 ## Technologies used
 
 * [React](https://facebook.github.io/react/) and [Redux](https://github.com/reactjs/redux)
 * [redux-thunk](https://github.com/gaearon/redux-thunk) as the [middleware](http://redux.js.org/docs/advanced/Middleware.html)
 * [ES6](http://es6-features.org/), [SASS](http://sass-lang.com/) with the latest [Boostrap 4 (Beta)](http://getbootstrap.com/)
 * [forecast5](https://openweathermap.org/forecast5) open weather APIs
+
 
 ## Usage
 
@@ -22,6 +24,7 @@ Using [yarn](https://yarnpkg.com/lang/en/) package manager:
 
 You can use `npm` the same way too.
 
+
 ## Wireframes
 
 #### Main View
@@ -32,3 +35,29 @@ You can use `npm` the same way too.
 
 #### Setting View
 ![react-weather settings view](https://i.imgur.com/BZLYTL5.png)
+
+
+## Commit message
+
+Here's a commit message example including *tag*, *title* and *description*:
+
+```
+[REF] Better usage of ES6 in Search container
+
+Use property shorthand notation for state object
+```
+
+Commit tags used:
+
+Tag | Description
+--- | -----------
+[ADD] | Add a new feature to a component
+[MOD] | *Modify*. Change the behaviour of a component
+[REF] | *Refactor*. Change the form but not the behaviour of a component
+[FIX] | Remove software errors
+[REM] | *Remove*. Remove some features from a component
+[REA] | *Readability*. Code and comments cleaning
+[REPO] | *Repository*. Everything repo-related
+[SCRIPT] | Add, modify or remove automation scripts
+[DOC] | *Documentation*. Everything doc-related
+[TASK] | A generic commit
