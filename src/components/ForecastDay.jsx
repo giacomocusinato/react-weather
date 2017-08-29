@@ -15,18 +15,14 @@ class ForecastDay extends Component {
     const avg = averages(forecasts);
 
     return (
-      <li className="list-group-item">
-        <div className="item-header">
-          <div className="item-header-left">
-            <Skycon icon={skycon} />
-            <p>{weekDay}</p>
-          </div>
-          <div className="item-header-right">
-            <p>{avg.minTemp}° - {avg.maxTemp}°</p>
-            <i className="fa fa-plus-circle" aria-hidden="true"></i>
-          </div>
+      <li className="list-group-item forecast-day">
+        <div className="day-header">
+          <Skycon icon={skycon} class="skycon-small" />
+          <p className="week-day">{weekDay}</p>
+          <p className="avg">{avg.minTemp}° - {avg.maxTemp}°</p>
+          <i className="fa fa-plus-circle"></i>
         </div>
-        <div className="item-content">
+        <div className="day-content">
 
         </div>
       </li>

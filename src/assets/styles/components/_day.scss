@@ -1,0 +1,42 @@
+$top: 18px;
+
+.forecast-list {
+  margin: 32px 0;
+}
+
+.forecast-day {
+  position: relative;
+  height: 62px;
+
+  .skycon-small {
+    position: absolute;
+    height: 40px;
+    width: 80px;
+    left: -8px;
+  }
+
+  .week-day {
+    position: absolute;
+    font-weight: 200;
+    font-size: 16px;
+    padding: 0;
+    left: 72px;
+    top: $top;
+  }
+
+  .avg {
+    position: absolute;
+    top: $top;
+    right: 48px;
+    font-weight: 200;
+  }
+
+  .fa-plus-circle {
+    position: absolute;
+    top: $top;
+    right: 12px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+}

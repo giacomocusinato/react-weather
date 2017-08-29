@@ -32,7 +32,7 @@ class Skycon extends Component {
 
   render() {
     return (
-      <canvas className="skycon" />
+      <canvas className={this.props.class} />
     );
   }
 }
