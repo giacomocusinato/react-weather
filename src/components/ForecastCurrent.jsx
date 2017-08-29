@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Skycon from './Skycon';
+import { getSkycon } from '../utils/WeatherIconUtils';
 
 
 class ForecastCurrent extends Component {
@@ -10,7 +11,7 @@ class ForecastCurrent extends Component {
     return (
       <div className="current-container">
         <div className="row justify-content-center">
-          <Skycon icon="PARTLY_CLOUDY_DAY" />
+          <Skycon icon={getSkycon(current.weather[0].icon)} />
           <p className="weather">
             {Math.round(current.main.temp)}° {current.weather[0].main}
           </p>
