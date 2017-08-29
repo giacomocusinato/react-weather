@@ -1,3 +1,7 @@
+/*
+  Gets the current user location as coordinates and returns
+  the object as a promise.
+*/
 export function getCoordinates() {
   if (navigator.geolocation) {
 

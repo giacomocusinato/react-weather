@@ -8,6 +8,9 @@ const WEEK_DAYS = [
   'Sunday'
 ];
 
+/*
+  Gets the full text of a week day from an ISO Date.
+*/
 export function getWeekDay(isoDate) {
   return WEEK_DAYS[new Date(isoDate).getDay()];
 }

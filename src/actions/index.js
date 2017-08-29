@@ -1,6 +1,6 @@
 import 'whatwg-fetch';
 import * as types from '../constants/ActionTypes';
-import { getCompleteUrl } from '../utils/ApiUtils';
+import { getCompleteUrl, formatJson } from '../utils/ApiUtils';
 
 
 export function fetchWeather(location) {
@@ -9,7 +9,7 @@ export function fetchWeather(location) {
 
     return fetch(getCompleteUrl(location))
       .then(response => response.json())
-      .then(json => formatWeatherJson(json))
+      .then(json => formatJson(json))
       .then(weatherObj => {
         dispatch(receiveWeatherSuccess(weatherObj));
       })
@@ -30,28 +30,4 @@ export function receiveWeatherSuccess(weather) {
 
 export function receiveWeatherError() {
   return { type: types.RECEIVE_WEATHER_ERROR };
-}
-
-/*
-Format retrieved weather json in order to match the designed
-application state (city, current weather and next five days weather).
-*/
-function formatWeatherJson(json) {
-  let initialValue = {
-    location: json.city,
-    current: json.list[0],
-    days: []
-  };
-
-  return json.list.reduce((obj, item) => {
-    let date = new Date(item.dt_txt);
-    if (!obj.days.length) {
-      obj.days.push({ date, forecasts: [item] });
-    } else {
-      obj.days[obj.days.length - 1].date.getDay() === date.getDay()
-        ? obj.days[obj.days.length - 1].forecasts.push(item)
-        : obj.days.push({ date, forecasts: [item] });
-    }
-    return obj;
-  }, initialValue);
 }
