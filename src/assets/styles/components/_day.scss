@@ -84,4 +84,15 @@ hr {
 
   }
 
+  .sparkline {
+    position: absolute;
+    width: 98px;
+    left: 380px;
+    font-weight: 200;
+
+    @media screen and (max-width: 544px) {
+      display: none;
+    }
+  }
+
 }

@@ -44,9 +44,12 @@ export function getDayIcon(forecasts) {
     map[icon] > map[max] ? icon : max);
 }
 
+export function flattenTemps(forecasts) {
+  return forecasts.map((forecast) => forecast.main.temp);
+}
+
 export function averageTemp(forecasts) {
-  let temps = forecasts.map((forecast) => forecast.main.temp);
-  return average(temps);
+  return average(flattenTemps(forecasts));
 }
 
 export function averagePressure(forecasts) {
