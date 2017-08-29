@@ -51,7 +51,7 @@ class Search extends Component {
             <span className="input-group-btn">
               <button
                 onClick={this.handleSearchClick}
-                className="btn btn-secondary"
+                className="btn btn-outline-dark"
                 type="submit">
                 Search
               </button>
@@ -59,7 +59,7 @@ class Search extends Component {
           </div>
           <button
             onClick={this.handleFindMeClick}
-            className="btn btn-primary btn-find"
+            className="btn btn-outline-dark btn-find"
             type="button">
             {this.state.positionLoading ?
               <i className="fa fa-circle-o-notch fa-spin fa-fw"></i> :

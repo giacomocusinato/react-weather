@@ -21,7 +21,7 @@ export function formatJson(json) {
   };
 
   return json.list.reduce((obj, item) => {
-    let date = new Date(item.dt_txt);
+    let date = new Date(item.dt*1000);
     if (!obj.days.length) {
       obj.days.push({ date, forecasts: [item] });
     } else {

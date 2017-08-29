@@ -71,6 +71,10 @@ hr {
     font-weight: 200;
     top: 42px;
 
+    @include media-breakpoint-down(xs) {
+      font-size: 14px;
+    }
+
     tr {
       height: 32px;
 
