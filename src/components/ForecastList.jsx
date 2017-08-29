@@ -6,7 +6,7 @@ import ForecastDay from './ForecastDay';
 class ForecastList extends Component {
   render() {
     const days = this.props.weather.data.days;
-
+    
     return (
       <div className="row justify-content-center">
         <ul className="list-group col-md-8">

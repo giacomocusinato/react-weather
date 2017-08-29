@@ -2,7 +2,6 @@
   Maps open weather icons to Skycons
 */
 export function getSkycon(icon) {
-  console.log(icon);
   switch(icon) {
     case '01d':
       return 'CLEAR_DAY';
