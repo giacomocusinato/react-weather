@@ -10,7 +10,7 @@ class ForecastDay extends Component {
 
   render() {
     const forecasts = this.props.forecasts;
-    const skycon = getSkycon(getDayIcon(forecasts));
+    const skycon = getSkycon(getDayIcon(forecasts), true);
     const weekDay = getWeekDay(this.props.date);
     const avg = averages(forecasts);
 

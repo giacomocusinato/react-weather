@@ -1,16 +1,16 @@
 /*
   Maps open weather icons to Skycons
 */
-export function getSkycon(icon) {
+export function getSkycon(icon, isDayIcon = false) {
   switch(icon) {
     case '01d':
       return 'CLEAR_DAY';
     case '01n':
-      return 'CLEAR_NIGHT';
+      return isDayIcon ? 'CLEAR_DAY' : 'CLEAR_NIGHT';
     case '02d':
       return 'PARTLY_CLOUDY_DAY';
     case '02n':
-      return 'PARTLY_CLOUDY_NIGHT';
+      return isDayIcon ? 'PARTLY_CLOUDY_DAY' : 'PARTLY_CLOUDY_NIGHT';
     case '03d':
     case '03n':
     case '04d':
