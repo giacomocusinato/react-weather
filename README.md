@@ -1,4 +1,14 @@
 # React Weather
+
+## Demo
+
+[DEMO](http://giacomocusinato.com/react-weather/) 
+
+*Localization is not working since the app runs on a HTTPS protocol.
+Run it from localhost if you want to use the localization feature!*
+
+## About 
+
 Job application exercise and React/Redux learning project.
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
