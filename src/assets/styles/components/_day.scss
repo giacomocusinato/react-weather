@@ -8,6 +8,19 @@ $top: 18px;
   position: relative;
   height: 62px;
 
+  &.opened {
+    height: 220px;
+  }
+
+}
+
+hr {
+  position: absolute;
+  top: 64px;
+}
+
+.day-header {
+
   .skycon-small {
     position: absolute;
     height: 40px;
@@ -31,12 +44,40 @@ $top: 18px;
     font-weight: 200;
   }
 
-  .fa-plus-circle {
+  .fa {
     position: absolute;
     top: $top;
     right: 12px;
     font-size: 24px;
     cursor: pointer;
+  }
+}
+
+.day-content {
+  position: relative;
+  margin-top: 56px;
+
+  .description {
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: 200;
+    position: absolute;
+  }
+
+  .table {
+    display: inline;
+    position: absolute;
+    font-size: 16px;
+    font-weight: 200;
+    top: 42px;
+
+    tr {
+      height: 32px;
+
+      td:nth-child(1) { width: 72px; }
+      td:nth-child(2) { width: 96px; }
+    }
+
   }
 
 }

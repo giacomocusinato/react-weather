@@ -1,29 +1,67 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 import Skycon from './Skycon';
-import { getWeekDay } from '../utils/DateUtils';
-import { getDayIcon, averages } from '../utils/WeatherUtils';
-import { getSkycon } from '../utils/WeatherIconUtils';
-
+import {getWeekDay} from '../utils/DateUtils';
+import {getDayIcon, getDayDescription, averages} from '../utils/WeatherUtils';
+import {getSkycon} from '../utils/WeatherIconUtils';
 
 class ForecastDay extends Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      opened: false
+    };
+  }
+
+  handleOpenClick = () => this.setState({
+    opened: !this.state.opened
+  });
 
   render() {
     const forecasts = this.props.forecasts;
     const skycon = getSkycon(getDayIcon(forecasts), true);
     const weekDay = getWeekDay(this.props.date);
     const avg = averages(forecasts);
+    const description = getDayDescription(forecasts);
+
+    let dayClass = 'list-group-item forecast-day';
+    let contentClass = 'day-content d-none';
+    if (this.state.opened) {
+      dayClass += ' opened';
+      contentClass += 'd-block';
+    }
 
     return (
-      <li className="list-group-item forecast-day">
+      <li className={dayClass}>
         <div className="day-header">
-          <Skycon icon={skycon} class="skycon-small" />
+          <Skycon icon={skycon} class="skycon-small"/>
           <p className="week-day">{weekDay}</p>
-          <p className="avg">{avg.minTemp}° - {avg.maxTemp}°</p>
-          <i className="fa fa-plus-circle"></i>
+          <p className="avg">{avg.temp}°</p>
+          {this.state.opened
+            ? <i className="fa fa-minus-circle" onClick={this.handleOpenClick}></i>
+            : <i className="fa fa-plus-circle" onClick={this.handleOpenClick}></i>}
         </div>
-        <div className="day-content">
-
+        <hr/>
+        <div className={contentClass}>
+          <p className="description">{description}</p>
+          <table className="table">
+            <tbody>
+              <tr>
+                <td>Humidity</td>
+                <td>{avg.humidity}%</td>
+                <td>Clouds</td>
+                <td>{avg.clouds}%</td>
+              </tr>
+              <tr>
+                <td>Pressure</td>
+                <td>{avg.pressure} hPa</td>
+                <td>Wind</td>
+                <td>{avg.wind} km/h</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </li>
     );
