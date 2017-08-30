@@ -2,12 +2,12 @@
 
 ## Demo
 
- <a href="http://giacomocusinato.com/react-weather" target="_blank">DEMO</a>
+ [DEMO](http://giacomocusinato.com/react-weather)
 
-*Localization is not working since the app runs on a HTTPS protocol.
-Run it from localhost if you want to use the localization feature!*
+*Localization is not working since the app runs over an insecure protocol.
+Start it from localhost or HTTPS if you want to use the localization feature!*
 
-## About 
+## About
 
 Job application exercise and React/Redux learning project.
 
