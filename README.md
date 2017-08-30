@@ -2,7 +2,7 @@
 
 ## Demo
 
-[DEMO](http://giacomocusinato.com/react-weather/) 
+ <a href="http://giacomocusinato.com/react-weather" target="_blank">DEMO</a>
 
 *Localization is not working since the app runs on a HTTPS protocol.
 Run it from localhost if you want to use the localization feature!*
