@@ -43,9 +43,6 @@ You can use `npm` the same way too.
 #### 5-day List View
 ![react-weather 5 day list view](https://i.imgur.com/PeBPw6n.png)
 
-#### Setting View
-![react-weather settings view](https://i.imgur.com/BZLYTL5.png)
-
 
 ## Commit message
 
