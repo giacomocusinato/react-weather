@@ -2,7 +2,7 @@
 
 ## Demo
 
- [DEMO](http://giacomocusinato.com/react-weather)
+ [DEMO](https://giacomocusinato.github.io/react-weather/)
 
 *Localization is not working since the app runs over an insecure protocol.
 Start it from localhost or HTTPS if you want to use the localization feature!*
